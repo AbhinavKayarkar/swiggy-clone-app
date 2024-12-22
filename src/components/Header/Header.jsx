@@ -4,22 +4,22 @@ import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="header-container">
+    <div className="flex justify-between bg-orange-200 shadow-fuchsia-200">
       <Title />
       <div>
         <nav>
-          <ul>
+          <ul className="flex justify-around px-2 m-10">
             <Link to="/">
-              <li>Home</li>{" "}
+              <li className="px-4">Home</li>{" "}
             </Link>
             <Link to="/about">
-              <li>About</li>
+              <li className="px-4">About</li>
             </Link>
             <Link to="/contact">
-              <li>Contact</li>
+              <li className="px-4">Contact</li>
             </Link>
             <Link to="/cart">
-              <li>Cart</li>
+              <li className="px-4">Cart</li>
             </Link>
           </ul>
         </nav>

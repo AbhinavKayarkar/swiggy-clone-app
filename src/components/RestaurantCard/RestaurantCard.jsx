@@ -5,24 +5,21 @@ import star from "../../assets/imgs/star-rating.png";
 const RestaurantCard = (props) => {
   return (
     <>
-      <div className="card" key={props.item.info.id}>
-        <img src={`${IMG_URL}` + `${props.item?.info?.cloudinaryImageId}`} />
-        <div className="card-text-content">
-          <h3 style={{ marginBottom: "-1px" }}>
-            {props.item?.info?.name?.substring(0, 25)}
-          </h3>
-          <p className="parent-rating">
-            <img className="rating-img" src={star} />
+      <div className="h-34 w-60 border-spacing-1 my-5 mx-2">
+        <img className="h-60 w-56 aspect-auto" src={`${IMG_URL}` + `${props.item?.info?.cloudinaryImageId}`} />
+        <div>
+          <h3 className="font-semibold text-xl">{props.item?.info?.name?.substring(0, 25)}</h3>
+          <span className="flex">
             <span>
-              {props.item?.info?.avgRating}{" "}
-              <span style={{ paddingLeft: "6px" }}>•</span>
-              <b style={{ paddingLeft: "6px" }}>{props.item?.info?.sla?.slaString}</b>
+              <img className="w-6" src={star} />
             </span>
-          </p>
-          <p style={{ margin: "0px" }}>
-            {props.item?.info?.cuisines?.join(", ")?.substring(0, 21)}
-          </p>
-          <p style={{ margin: "0px" }}>{props.item?.info?.locality}</p>
+            <span>
+              {props.item?.info?.avgRating} <span>•</span>
+              <span className="font-semibold ml-1">{props.item?.info?.sla?.slaString}</span>
+            </span>
+          </span>
+          <p>{props.item?.info?.cuisines?.join(", ")?.substring(0, 21)}</p>
+          <p>{props.item?.info?.locality}</p>
         </div>
       </div>
     </>

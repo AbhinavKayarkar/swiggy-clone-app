@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import star from "../../assets/imgs/star-rating.png";
-import { SWIGGGY_API_URL, IMG_URL } from "../../../utils/constants";
 import useRestaurants from "../../../utils/hooks/useRestaurants";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
+
 function Body() {
   const [searchedText, setSearchedText] = useState("");
   const [restaurants, filteredRestaurants, setFilteredRestaurants] =
@@ -22,19 +21,20 @@ function Body() {
   return (
     <>
       {/* Search feild */}
-      <div>
+      <div className="text-center m-2 p-1">
         <input
+        className= " bg-slate-100 border-spacing-1 text-center p-1 px-3 mx-5 m-1 hover:bg-orange-200"
           type="text"
           placeholder="search"
           onChange={(e) => setSearchedText(e.target.value)}
         />
-        <button onClick={handleSearch}>search</button>
+        <button className="bg-blue-500 p-2 rounded-full px-4" onClick={handleSearch}>search</button>
       </div>
 
       {/* Restaurants Cards */}
-      <div className="cards">
+      <div className="flex flex-wrap justify-self-auto m-3 px-2 w-full">
         {filteredRestaurants?.map((item) => {
-          return <RestaurantCard item={item} />;
+          return <RestaurantCard key={item.info.id} item={item} />;
         })}
       </div>
     </>
