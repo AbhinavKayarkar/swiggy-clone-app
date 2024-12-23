@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
-    <div className="w-full">
+    <div className="w-full text-center">
       <Header />
       <Outlet />
       <Footer />

@@ -19,7 +19,7 @@ function Body() {
     setSearchedText(" ");
   };
   return (
-    <>
+    <div className="">
       {/* Search feild */}
       <div className="text-center m-2 p-1">
         <input
@@ -32,12 +32,12 @@ function Body() {
       </div>
 
       {/* Restaurants Cards */}
-      <div className="flex flex-wrap justify-self-auto m-3 px-2 w-full">
+      <div className="grid grid-cols-4 justify-items-center mt-2">
         {filteredRestaurants?.map((item) => {
           return <RestaurantCard key={item.info.id} item={item} />;
         })}
       </div>
-    </>
+    </div>
   );
 }
 

@@ -5,9 +5,9 @@ import star from "../../assets/imgs/star-rating.png";
 const RestaurantCard = (props) => {
   return (
     <>
-      <div className="h-34 w-60 border-spacing-1 my-5 mx-2">
-        <img className="h-60 w-56 aspect-auto" src={`${IMG_URL}` + `${props.item?.info?.cloudinaryImageId}`} />
-        <div>
+      <div className="h-34 mt-2 mb-8 border-spacing-1 shadow-slate-200">
+        <img className="h-60 w-56 aspect-auto rounded-2xl" src={`${IMG_URL}` + `${props.item?.info?.cloudinaryImageId}`} />
+        <div className="text-start pl-1">
           <h3 className="font-semibold text-xl">{props.item?.info?.name?.substring(0, 25)}</h3>
           <span className="flex">
             <span>
