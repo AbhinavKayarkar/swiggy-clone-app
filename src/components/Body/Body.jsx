@@ -28,7 +28,7 @@ function Body() {
           placeholder="search"
           onChange={(e) => setSearchedText(e.target.value)}
         />
-        <button className="bg-blue-500 p-2 rounded-full px-4" onClick={handleSearch}>search</button>
+        <button className="bg-blue-500 p-2 rounded-full px-4 text-white" onClick={handleSearch}>search</button>
       </div>
 
       {/* Restaurants Cards */}

@@ -5,23 +5,32 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import Body from "./components/Body/Body";
 import { RouterProvider } from "react-router-dom";
 import RoutesErrorPage from "./pages/RoutesErrorPage";
+import { lazy, Suspense } from "react";
 
+const Body = lazy(() => import("./components/Body/Body"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 const appRoutes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppLayout />} errorElement={<RoutesErrorPage />}>
       <Route
         path="/"
-        element={<Body />}
+        element={
+          <Suspense fallback={<div>Loading ...</div>}>
+            <Body />
+          </Suspense>
+        }
         errorElement={<RoutesErrorPage />}
       ></Route>
       <Route
         path="/about"
-        element={<AboutUs />}
+        element={
+          <Suspense fallback={<div>Loading ...</div>}>
+            <AboutUs />
+          </Suspense>
+        }
         errorElement={<RoutesErrorPage />}
       ></Route>
       <Route
