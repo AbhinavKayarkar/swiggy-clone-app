@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import { RouterProvider } from "react-router-dom";
 import RoutesErrorPage from "./pages/RoutesErrorPage";
 import { lazy, Suspense } from "react";
+import RestaurantMenu from "./components/RestaurantMenu/RestaurantMenu";
 
 const Body = lazy(() => import("./components/Body/Body"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
@@ -36,6 +37,11 @@ const appRoutes = createBrowserRouter(
       <Route
         path="/contact"
         element={<Contact />}
+        errorElement={<RoutesErrorPage />}
+      ></Route>
+      <Route
+        path="/restaurants/:resId"
+        element={<RestaurantMenu />}
         errorElement={<RoutesErrorPage />}
       ></Route>
     </Route>

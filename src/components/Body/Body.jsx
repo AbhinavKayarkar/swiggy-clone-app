@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useRestaurants from "../../../utils/hooks/useRestaurants";
 import RestaurantCard from "../RestaurantCard/RestaurantCard";
 import Shimmer from "../../../utils/Shimmer";
+import { Link } from "react-router-dom";
 
 function Body() {
   const [searchedText, setSearchedText] = useState("");
@@ -43,7 +44,11 @@ function Body() {
       {/* Restaurants Cards */}
       <div className="grid grid-cols-4 justify-items-center mt-2">
         {filteredRestaurants?.map((item) => {
-          return <RestaurantCard key={item.info.id} item={item} />;
+          return (
+            <Link to={`/restaurants/${item.info.id}`}>
+              <RestaurantCard key={item.info.id} item={item} />
+            </Link>
+          );
         })}
       </div>
     </div>
