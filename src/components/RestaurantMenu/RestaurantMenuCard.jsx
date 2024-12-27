@@ -5,7 +5,7 @@ import { addToCart } from "../../slice/cartSlice";
 const RestaurantMenuCard = ({ items }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [index, setIndex] = useState(0);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleClick = (i) => {
     setIsVisible(!isVisible);
@@ -13,8 +13,8 @@ const RestaurantMenuCard = ({ items }) => {
   };
 
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item))
-  }
+    dispatch(addToCart(item));
+  };
 
   return (
     <>
@@ -32,8 +32,18 @@ const RestaurantMenuCard = ({ items }) => {
               item?.itemCards?.map((i) => {
                 return (
                   <div key={i.card.info.id} className="flex justify-between">
-                    <p className="py-2 px-3">{i.card.info.name}</p>
-                    <button onClick={() => handleAddToCart(i.card.info)} className="bg-green-500 text-white m-2 px-4 rounded-full">
+                    <p className="text-start">
+                      <p className="py-1 px-3">{i.card.info.name} </p>
+                      <p className="py-1 px-3">
+                        Rs. {i.card.info.price / 100 ||
+                          i.card.info.defaultPrice / 100}
+                      </p>
+                    </p>
+
+                    <button
+                      onClick={() => handleAddToCart(i.card.info)}
+                      className="bg-green-500 text-white m-2 px-4 rounded-full"
+                    >
                       Add
                     </button>
                   </div>

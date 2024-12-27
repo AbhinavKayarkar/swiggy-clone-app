@@ -10,10 +10,7 @@ const RestaurantMenu = () => {
     <>
       {menu?.map((menu, index) => {
         return (
-          <RestaurantMenuCard
-            key={index}
-            items={menu?.card?.card?.categories}
-          />
+            <RestaurantMenuCard key={index} items={menu?.card?.card?.categories} />
         );
       })}
     </>
