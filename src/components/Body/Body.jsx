@@ -42,7 +42,7 @@ function Body() {
       </div>
 
       {/* Restaurants Cards */}
-      <div className="grid grid-cols-4 justify-items-center mt-2">
+      <div className="grid grid-cols-5 justify-items-center mt-2">
         {filteredRestaurants?.map((item) => {
           return (
             <Link to={`/restaurants/${item.info.id}`}>

@@ -13,6 +13,7 @@ import RestaurantMenu from "./components/RestaurantMenu/RestaurantMenu";
 
 const Body = lazy(() => import("./components/Body/Body"));
 const AboutUs = lazy(() => import("./pages/AboutUs"));
+
 const appRoutes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppLayout />} errorElement={<RoutesErrorPage />}>
