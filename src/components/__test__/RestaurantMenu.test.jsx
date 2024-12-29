@@ -41,8 +41,7 @@ test("Cart functionality should be working", async () => {
 
   const online = body.getByTestId("isOnline");
   fireEvent.offline(window);
-    expect(online.innerHTML).toBe("🔴");
-    fireEvent.online(window);
-    expect(online.innerHTML).toBe("🟢");
+  expect(online.innerHTML).toBe("🔴");
+  fireEvent.online(window);
+  expect(online.innerHTML).toBe("🟢");
 });
-
