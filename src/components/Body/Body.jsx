@@ -28,12 +28,14 @@ function Body() {
       {/* Search feild */}
       <div className="text-center m-2 p-1">
         <input
+        data-testid="search-input"
           className=" bg-slate-100 border-spacing-1 text-center p-1 px-3 mx-5 m-1 hover:bg-orange-200"
           type="text"
           placeholder="search"
           onChange={(e) => setSearchedText(e.target.value)}
         />
         <button
+        data-testid="search-btn"
           className="bg-blue-500 p-2 rounded-full px-4 text-white"
           onClick={handleSearch}
         >
@@ -42,7 +44,7 @@ function Body() {
       </div>
 
       {/* Restaurants Cards */}
-      <div className="grid grid-cols-5 justify-items-center mt-2">
+      <div className="grid grid-cols-5 justify-items-center mt-2" data-testid="res-card">
         {filteredRestaurants?.map((item) => {
           return (
             <Link to={`/restaurants/${item.info.id}`}>

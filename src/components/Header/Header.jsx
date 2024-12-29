@@ -24,9 +24,9 @@ const Header = () => {
               <li className="px-4">Contact</li>
             </Link>
             <Link to="/cart">
-              <li className="px-4">Cart- {items.length} items</li>
+              <li className="px-4" data-testid="cart">Cart- {items.length} items</li>
             </Link>
-            <li>{isOnline ? "🟢" : "🔴"}</li>{" "}
+            <li data-testid="isOnline">{isOnline ? "🟢" : "🔴"}</li>{" "}
             {/** Offile and online functionality checked by useOnline hook */}
           </ul>
         </nav>

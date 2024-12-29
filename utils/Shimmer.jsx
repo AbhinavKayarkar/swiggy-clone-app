@@ -2,7 +2,7 @@ import React from "react";
 
 const Shimmer = () => {
   return (
-    <div className="grid grid-cols-5 justify-items-center mt-2">
+    <div className="grid grid-cols-5 justify-items-center mt-2" data-testid="shimmer">
      {Array(8).fill("").map((index) => {
         return(<>
               <div key={index} className="h-34 mt-2 mb-8 border-spacing-1 shadow-slate-300 bg-gray-900" >

@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  * npx jest --init {npx for once , init for initliazation of some congiguration in test environment}
  */
+
 /** @type {import('jest').Config} */
 const config = {
   // All imported modules in your tests should be mocked automatically
@@ -55,6 +56,7 @@ const config = {
   // fakeTimers: {
   //   "enableGlobally": false
   // },
+
   // Force coverage collection from ignored files using an array of glob patterns
   // forceCoverageMatch: [],
 
@@ -195,10 +197,12 @@ const config = {
   testEnvironment: "jest-environment-jsdom", // Same name of the lib you installed
   // setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // The file you created to extend jest config and "implement" the jest-dom environment in the jest globals
   moduleNameMapper: {
-    "\\.(gif|ttf|eot|svg|png|jpg)$":" ./src/__mocks__/dummyLogo", // The global stub for weird files
+    "\\.(gif|ttf|eot|svg|png|jpg)$": "<rootDir>/src/__mocks__/dummyLogo", // The global stub for weird files
     "\\.(css|less|sass|scss)$": "identity-obj-proxy", // The mock for style related files
     "^@/(.*)$": "<rootDir>/src/$1", // [optional] Are you using aliases?
   },
+  maxWorkers: 2,  // Reduce the number of workers, try 2 or 4
+  testRunner: 'jest-circus/runner',  // Use this if you're using the default test runner
 };
 
 export default config;

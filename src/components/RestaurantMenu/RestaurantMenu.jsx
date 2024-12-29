@@ -7,7 +7,7 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const menu = useRestaurantMenu(resId);
   return (
-    <>
+    <div data-testid="menu">
       {menu?.map((menu, index) => {
         return (
           <RestaurantMenuCard
@@ -17,7 +17,7 @@ const RestaurantMenu = () => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 

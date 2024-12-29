@@ -17,11 +17,12 @@ const RestaurantMenuCard = ({ items, extra }) => {
   };
 
   return (
-    <>
+    <div data-testid="menu-card">
       {items?.map((item, i) => {
         return (
-          <div key={i}>
+          <div key={i} data-testid="title">
             <p
+            
               className="bg-yellow-300 text-start m-2 p-3"
               onClick={() => handleClick(i)}
             >
@@ -31,9 +32,9 @@ const RestaurantMenuCard = ({ items, extra }) => {
               index === i &&
               item?.itemCards?.map((i) => {
                 return (
-                  <div key={i.card.info.id} className="flex justify-between">
+                  <div data-testid="detail" key={i.card.info.id} className="flex justify-between" >
                     <p className="text-start">
-                      <p className="py-1 px-3">{i.card.info.name} </p>
+                      <p className="py-1 px-3" >{i.card.info.name} </p>
                       <p className="py-1 px-3">
                         Rs.{" "}
                         {i.card.info.price / 100 ||
@@ -41,7 +42,8 @@ const RestaurantMenuCard = ({ items, extra }) => {
                       </p>
                     </p>
 
-                    <button
+                    <button 
+                      data-testid="addbtn"
                       onClick={() => handleAddToCart(i.card.info)}
                       className="bg-green-500 text-white m-2 px-4 rounded-full"
                     >
@@ -57,6 +59,7 @@ const RestaurantMenuCard = ({ items, extra }) => {
         return (
           <div key={i.card.info.id}>
             <p
+            data-testid="title"
               className="bg-yellow-300 text-start m-2 p-3"
               onClick={() => handleClick(i)}
             >
@@ -64,7 +67,7 @@ const RestaurantMenuCard = ({ items, extra }) => {
             </p>
 
             {isVisible && (
-              <div key={i.card.info.id} className="flex justify-between">
+              <div data-testid="detail" key={i.card.info.id} className="flex justify-between">
                 <p className="text-start">
                   <p className="py-1 px-3">{i.card.info.name} </p>
                   <p className="py-1 px-3">
@@ -73,7 +76,7 @@ const RestaurantMenuCard = ({ items, extra }) => {
                   </p>
                 </p>
 
-                <button
+                <button data-testid="addbtn"
                   onClick={() => handleAddToCart(i.card.info)}
                   className="bg-green-500 text-white m-2 px-4 rounded-full"
                 >
@@ -84,7 +87,7 @@ const RestaurantMenuCard = ({ items, extra }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
